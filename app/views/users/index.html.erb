@@ -1,0 +1,4 @@
+<p><h1>Hi <%=@user.name%>.</h1></p>
+<%= form_tag("/sessions/destroy", method: "delete") do %>
+<%= submit_tag "logout" %>
+<% end %>

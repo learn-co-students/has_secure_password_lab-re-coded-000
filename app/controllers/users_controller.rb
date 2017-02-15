@@ -13,9 +13,9 @@ class UsersController < ApplicationController
 	end
 	
 	def create
-		@user = User.new(user_params)
-		if @user.save
-			session[:id] = @user.id
+		user = User.new(user_params)
+		if user.save
+			session[:user_id] = user.id
 			render :index
 		else
 			flash[:notice] = "failed to sign up"

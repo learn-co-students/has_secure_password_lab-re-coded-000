@@ -1,0 +1,9 @@
+<div class="notice"><%= notice %></div>
+<%= form_tag("/sessions/login") do %>
+<%=label_tag :name %>
+<%= text_field_tag :name %>
+<div class="field" >
+<%= label_tag :password %>
+<%= password_field_tag :password %>
+<%= submit_tag "login" %>
+<% end %>

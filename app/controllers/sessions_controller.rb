@@ -3,9 +3,9 @@ class SessionsController < ApplicationController
 	end
 	
 	def create
-    	@user = User.find_by(name: params[:user][:name])
+    	@user = User.find_by(name: params[:name])
     	if @user
-      	return head(:forbidden) unless @user.try(:authenticate, params[:user][:password])
+      	return head(:forbidden) unless @user.try(:authenticate, params[:password])
       	session[:user_id] = @user.id
       	render 'users/index'
     	else
